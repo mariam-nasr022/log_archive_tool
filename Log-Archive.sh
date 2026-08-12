@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Script Name : Log-Archive.sh
-# Discription : Collects and archives logs to keep them organized and accessible
+# Description : Collects and archives logs to keep them organized and accessible
 # Usage : ./Log-Archive.sh 
 # Author : Mariam Nasr
 # Version : 1.0
@@ -16,7 +16,7 @@ Days=7                                # Log files older than this number of days
 
 # Commands
 
- mkdir -p $Archive_dir     # to create a directory if is not exist
+ mkdir -p $Archive_dir     # Create the directory if it does not exist
 
 
 # Function to find old file logs
@@ -27,11 +27,11 @@ find_old_logs (){
 
 	    # -type f  -> search for regular files
             # -name    -> search for files ending with .log
-  	    # -mtime   -> find files modified more than $Days 
+  	    # -mtime   -> find files modified more than $Days days ago
 }
 
 
-# function to archive file log 
+# Function to archive log files 
 
 archive_log (){
 		echo " The files are ready for archive and compress "
@@ -51,7 +51,7 @@ archive_log (){
 	then 
 		echo " Compressed Archive created successfully "
 	else
-		echo " Copressed Archive failed "
+		echo " Compressed Archive failed "
 	fi 
 }
 
